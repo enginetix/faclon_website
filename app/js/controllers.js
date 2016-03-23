@@ -3337,6 +3337,76 @@ function jstreeCtrl($scope) {
 
 }
 
+//function for getting view devices data
+function viewDevices(){
+    this.devices_data = [
+        {
+            name: 'Device 1',
+            code: 'djscscs',
+            date: '13th July,93',
+            address: ['Kandivali West', 'Mumbai'],
+            status: 'Working Fine',
+            imgURL: 'img/a1.jpg'
+        },
+        {
+            name: 'Device 2',
+            code: 'djscscs',
+            date: '13th July,93',
+            address: ['Company Bagh', 'Mumbai'],
+            status: 'Working Fine',
+            imgURL: 'img/a2.jpg'     
+        },
+        {
+            name: 'Device 3',
+            code: 'djscscs',
+            date: '13th July,93',
+            address: ['Andheri West', 'Mumbai'],
+            status: 'Broken',
+            imgURL: 'img/a3.jpg'  
+        },
+        {
+            name: 'Device 4',
+            code: 'djscscs',
+            date: '13th July,93',
+            address: ['Bandra Kurla Complex', 'Mumbai'],
+            status: 'Broken',
+            imgURL: 'img/a4.jpg' 
+        },
+        {
+            name: 'Device 5',
+            code: 'djscscs',
+            date: '13th July,93',
+            address: ['Company Bagh', 'Kanpur'],
+            status: 'In Repair',
+            imgURL: 'img/a5.jpg' 
+        },
+        {
+            name: 'Device 6',
+            code: 'djscscs',
+            date: '13th July,93',
+            address: ['Kidwai Nagar', 'Kanpur'],
+            status: 'Crashed',
+            imgURL: 'img/a6.jpg' 
+        },
+        {
+            name: 'Device 7',
+            code: 'djscscs',
+            date: '13th July,93',
+            address: ['Sharda Nagar', 'Kanpur'],
+            status: 'Crashed',
+            imgURL: 'img/a7.jpg' 
+        },
+        {
+            name: 'Device 8',
+            code: 'djscscs',
+            date: '13th July,93',
+            address: ['Swaroop Nagar', 'Kanpur'],
+            status: 'Crashed',
+            imgURL: 'img/a8.jpg' 
+        }
+    ];
+}
+
 /**
  *
  * Pass all functions into module
@@ -3380,5 +3450,8 @@ angular
     .controller('truncateCtrl', truncateCtrl)
     .controller('touchspinCtrl', touchspinCtrl)
     .controller('tourCtrl', tourCtrl)
-    .controller('jstreeCtrl', jstreeCtrl);
+    .controller('jstreeCtrl', jstreeCtrl)
+    .controller('viewDevices', viewDevices);
+
+    
 
