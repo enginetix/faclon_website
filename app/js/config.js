@@ -515,6 +515,11 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
             templateUrl: 'views/wizard/step_three.html',
             data: { pageTitle: 'Wizard form' }
         })
+        .state('forms.wizard.step_four', {
+            url: '/step_four',
+            templateUrl: 'views/wizard/step_four.html',
+            data: { pageTitle: 'Wizard form' }
+        })
         .state('forms.file_upload', {
             url: "/file_upload",
             templateUrl: "views/form_file_upload.html",
@@ -766,6 +771,11 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
             url: "/notifications_tooltips",
             templateUrl: "views/notifications.html",
             data: { pageTitle: 'Notifications and tooltips' }
+        })
+        .state('ui.notifications_rishi', {
+            url: "/notifications_rishi",
+            templateUrl: "views/notifications_rishi.html",
+            data: { pageTitle: 'Notifications' }
         })
         .state('ui.badges_labels', {
             url: "/badges_labels",
