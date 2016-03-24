@@ -168,17 +168,28 @@ function MainCtrl() {
     /**
      * alerts - used for dynamic alerts in Notifications and Tooltips view
      */
+     // All you want to do about alerts - Rishi
+
     this.alerts = [
-        { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
-        { type: 'success', msg: 'Well done! You successfully read this important alert message.' },
-        { type: 'info', msg: 'OK, You are done a great job man.' }
+        { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' , icon: 'fa-bell' , time : '1304375948024'},
+        { type: 'success', msg: 'Well done! You successfully read this important alert message.' , icon: 'fa-bell' , time : '1304375948024'},
+        { type: 'info', msg: 'OK, You are done a great job man.' , icon: 'fa-bell' , time : '1304375948024'},
+        { type: 'info', msg: 'OK, You are done a great job man.' , icon: 'fa-bell' , time : '1304375948024'}
     ];
+
+
+       
 
     /**
      * addAlert, closeAlert  - used to manage alerts in Notifications and Tooltips view
      */
+
+
+
     this.addAlert = function() {
-        this.alerts.push({msg: 'Another alert!'});
+         var d = new Date();
+        var n = d.getTime();
+        this.alerts.push({msg: 'Another alert!' , icon : 'fa-envelope' , time : n});
     };
 
     this.closeAlert = function(index) {

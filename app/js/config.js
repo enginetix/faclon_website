@@ -772,6 +772,11 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
             templateUrl: "views/notifications.html",
             data: { pageTitle: 'Notifications and tooltips' }
         })
+        .state('ui.notifications_rishi', {
+            url: "/notifications_rishi",
+            templateUrl: "views/notifications_rishi.html",
+            data: { pageTitle: 'Notifications' }
+        })
         .state('ui.badges_labels', {
             url: "/badges_labels",
             templateUrl: "views/badges_labels.html",
