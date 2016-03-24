@@ -8,7 +8,7 @@
                 <label>Cross Section area of Water Tank</label>
                 <input id="area" ng-model="formData.username" name="username" type="text" class="form-control" ng-minlength="8">
                 <br/>
-                <select name="unitSelect">
+                <select class="unitSelector" name="unitSelect">
                   <option value="option-1">mm&sup2;</option>
                   <option value="option-2">cm&sup2;</option>
                   <option value="option-2">m&sup2;</option>
@@ -24,7 +24,7 @@
                 <label>Height of Water Tank</label>
                 <input id="area" ng-model="formData.username" name="username" type="text" class="form-control" ng-minlength="8">
                 <br/>
-                <select name="unitSelect">
+                <select class="unitSelector" name="unitSelect">
                   <option value="option-1">mm</option>
                   <option value="option-2">cm</option>
                   <option selected value="option-2">m</option>
@@ -40,7 +40,7 @@
                 <label>Unit of measurement for sensor</label>
                 <input id="area" ng-model="formData.username" name="username" type="text" class="form-control" ng-minlength="8">
                 <br/>
-                <select name="unitSelect">
+                <select class="unitSelector" name="unitSelect">
                   <option value="option-1">mm</option>
                   <option selected value="option-2">cm</option>
                   <option value="option-2">m</option>
@@ -56,9 +56,11 @@
         </div>
         
   </div>
-        <div>
+        <div class="col-lg-12">
+          <div class="col-lg-4">
             <a ui-sref="forms.wizard.step_one" class="btn btn-default">Previous</a>
             <a ui-sref="forms.wizard.step_three" class="btn btn-primary">Next</a>
+          </div>
         </div>
 </fieldset>
  
