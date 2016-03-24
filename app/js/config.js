@@ -584,6 +584,11 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
             templateUrl: "views/profile.html",
             data: { pageTitle: 'Profile' }
         })
+        .state('app.bill', {
+            url: "/payments",
+            templateUrl: "views/ecommerce_payments.html",
+            data: { pageTitle: 'Faclon Services Payments' }
+        })
         .state('app.profile_2', {
             url: "/profile_2",
             templateUrl: "views/profile_2.html",

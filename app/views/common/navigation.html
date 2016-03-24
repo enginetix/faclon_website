@@ -15,7 +15,7 @@
                     </a>
                     <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
                         <li><a ui-sref="app.profile">Profile</a></li>
-                        <li><a ui-sref="app.billing">Billing</a></li>
+                        <li><a ui-sref="app.bill">Billing</a></li>
                         <li><a ui-sref="app.usage">Usage</a></li>
                         <!-- <li><a ui-sref="mailbox.inbox">Mailbox</a></li> -->
                         <li class="divider"></li>
@@ -37,7 +37,7 @@
                 </ul>
             </li>
 
-              <li ng-class="{active: $state.includes('app')}">
+            <li ng-class="{active: $state.includes('app')}">
                 <a href=""><i class="fa fa-desktop"></i> <span class="nav-label">{{ 'My Devices' | translate }}</span></a>
                 <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('app')}">
                     <li ui-sref-active="active"><a ui-sref="forms.wizard.step_one"><i class="fa fa-plus-square"></i> Add Device</a></li>
@@ -50,7 +50,7 @@
             </li>
 
             <li ng-class="{active: $state.includes('app')}">
-                <a href=""><i class="fa fa-sliders"></i> <span class="nav-label">{{ 'Rules/Triggers' | translate }}</span></a>
+                <a ui-sref="widget_select"><i class="fa fa-sliders"></i> <span class="nav-label">{{ 'Rules/Triggers' | translate }}</span></a>
             </li>
 
             <li ng-class="{active: $state.includes('app')}">
