@@ -11,7 +11,8 @@
         'ngIdle',                       // Idle timer
         'ngSanitize',                   // ngSanitize
         'ngMaterial',					// ng Material
-        'checkboxDemo1'
+        'checkboxDemo1',
+        'CalculatorApp'
     ])
 })();
 

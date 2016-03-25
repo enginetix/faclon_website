@@ -53,8 +53,8 @@
                 <a ui-sref="widget_select"><i class="fa fa-sliders"></i> <span class="nav-label">{{ 'Rules/Triggers' | translate }}</span></a>
             </li>
 
-            <li ng-class="{active: $state.includes('app')}">
-                <a href=""><i class="fa fa-wrench"></i> <span class="nav-label">{{ 'Custom Variables' | translate }}</span></a>
+            <li ng-class="{active: $state.includes('custom_variables')}">
+                <a ui-sref="custom_variables.add"><i class="fa fa-wrench"></i> <span class="nav-label">{{ 'Custom Variables' | translate }}</span> </a>
             </li>
 
             <li ng-class="{active: $state.includes('app')}">

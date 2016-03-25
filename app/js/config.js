@@ -19,6 +19,8 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
         debug: false
     });
 
+
+
     $stateProvider
 
         .state('dashboards', {
@@ -741,6 +743,16 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
             url: "/errorTwo",
             templateUrl: "views/errorTwo.html",
             data: { pageTitle: '500', specialClass: 'gray-bg' }
+        })
+        .state('custom_variables', {
+            abstract: true,
+            url: "/ui",
+            templateUrl: "views/common/content.html"
+        })
+        .state('custom_variables.add', {
+            url: "/custom_variables",
+            templateUrl: "views/custom_variables.html",
+            data: { pageTitle: 'Off canvas menu'}
         })
         .state('ui', {
             abstract: true,
