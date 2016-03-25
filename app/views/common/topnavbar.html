@@ -87,7 +87,7 @@
                         <a ui-sref="inbox">
                             <div>
                                 <i class="fa {{alert.icon}} fa-fw"></i> {{alert.msg}}
-                                <span class="pull-right text-muted small">{{main.notifyAgo}} minutes ago</span>
+                                <span class="pull-right text-muted small">{{alert.time | rishi}} minutes ago</span>
                             </div>
                         </a>
                     </li>
