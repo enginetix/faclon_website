@@ -19,11 +19,29 @@
          // In the return function, we must pass in a single parameter which will be the data we will work on.
   // We have the ability to support multiple other parameters that can be passed into the filter optionally
   return function(input) {
-  var dateObj = new Date();
-    var currTime = dateObj.getTime();
-    var diff= currTime-input;    
-    return (diff);
-
+  
+    var diff = Math.round((Date.now()-input)/1000);
+    if(diff <=60)
+      {
+        return ('less than a minute ago');
+      }
+    if(diff >60 && diff<=3600)
+      {
+        return (Math.round(diff/60) + ' minutes ago');
+      }
+    if(diff >3600 && diff<=86400)
+      {
+        return (Math.floor(diff/3660) + ' hours ago');
+      }
+    else
+      {
+        var a=input;
+        var theDate = new Date(parseInt(input));
+        
+        dateString = theDate.toDateString();
+        dateTime = theDate.toTimeString();
+        return (dateString + ' at ' + dateTime);
+      }
   }
     })
 })();

@@ -181,8 +181,8 @@ function MainCtrl() {
     this.alerts = [
         { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' , icon: 'fa-bell' , time : '1304375948024'},
         { type: 'success', msg: 'Well done! You successfully read this important alert message.' , icon: 'fa-bell' , time : '1304375948024'},
-        { type: 'info', msg: 'OK, You are done a great job man.' , icon: 'fa-bell' , time : '1304375948024'},
-        { type: 'info', msg: 'OK, You are done a great job man.' , icon: 'fa-bell' , time : '1304375948024'}
+        { type: 'info', msg: 'OK, You are done a great job man.' , icon: 'fa-bell' , time : '1458908876000'},
+        { type: 'info', msg: 'OK, You are done a great job man.' , icon: 'fa-bell' , time : '1458905276000'}
     ];
 
 
