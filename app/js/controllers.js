@@ -53,6 +53,11 @@
  * Contains several global data used in different view
  *
  */
+
+//rishi edit
+ var aa = 'hello';
+
+
 function MainCtrl() {
 
     /**
@@ -64,6 +69,9 @@ function MainCtrl() {
      * slideInterval - Interval for bootstrap Carousel, in milliseconds:
      */
     this.slideInterval = 5000;
+
+    this.notifyAgo = aa;   //rishi edit for the time remaining 
+
 
 
     /**
