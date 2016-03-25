@@ -1,7 +1,7 @@
 (function(){
   angular.module('checkboxDemo1', ['ngMaterial'])
   .controller('checkBoxCtrl', function($scope) {
-      $scope.items = [1];
+      $scope.items = [1,2,3,4];
 
       $scope.selected = [];
       $scope.toggle = function (item, list) {
