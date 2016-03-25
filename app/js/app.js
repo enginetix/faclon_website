@@ -12,7 +12,8 @@
         'ngSanitize',                   // ngSanitize
         'ngMaterial',					// ng Material
         'checkboxDemo1',
-        'CalculatorApp'
+        'calculatorApp',
+        'calculatorModule'
     ])
 })();
 
