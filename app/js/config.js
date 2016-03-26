@@ -747,11 +747,16 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
         .state('custom_variables', {
             abstract: true,
             url: "/ui",
-            templateUrl: "views/common/content.html"
+            templateUrl: "views/custom_variables/custom_variables.html"
         })
         .state('custom_variables.add', {
-            url: "/custom_variables",
-            templateUrl: "views/custom_variables.html",
+            url: "/custom_variables_add",
+            templateUrl: "views/custom_variables/custom_variables_add.html",
+            data: { pageTitle: 'Off canvas menu'}
+        })
+        .state('custom_variables.view', {
+            url: "/custom_variables_view",
+            templateUrl: "views/custom_variables/custom_variables_view.html",
             data: { pageTitle: 'Off canvas menu'}
         })
         .state('ui', {
