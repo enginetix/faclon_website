@@ -744,6 +744,16 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
             templateUrl: "views/errorTwo.html",
             data: { pageTitle: '500', specialClass: 'gray-bg' }
         })
+        .state('help', {
+            abstract: true,
+            url: "/ui",
+            templateUrl: "views/help/help_template.html"
+        })
+        .state('help.page', {
+            url: "/help_page",
+            templateUrl: "views/help/help_page.html",
+            data: { pageTitle: 'Happy to Help'}
+        })
         .state('custom_variables', {
             abstract: true,
             url: "/ui",
