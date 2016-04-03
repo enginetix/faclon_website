@@ -1,0 +1,41 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-9">
+        <h2><strong>My Devices </strong> <i class="fa fa-long-arrow-right "></i> View Devices</h2>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight" ng-controller="viewDevices as viewd">
+    <div class="row">
+
+        <div class="col-lg-3" ng-repeat="device in viewd.devices_data">
+            <div class="contact-box center-version">
+
+                <a href="profile.html">
+
+                    <img alt="image" class="img-circle" ng-src="{{device.imgURL}}">
+
+
+                    <h3 class="m-b-xs"><strong>{{device.name}}</strong></h3>
+
+                    <div class="font-bold">{{device.code}}</div>
+                    <address class="m-t-md">
+                        <strong>{{device.date}}</strong><br>
+                        {{device.address[0]}}<br>
+                        {{device.address[1]}}<br>
+                        <strong>Status:</strong> {{device.status}}
+                    </address>
+
+                </a>
+                <div class="contact-box-footer">
+                    <div class="m-t-xs btn-group">
+                        <a class="btn btn-xs btn-white"><i class="fa fa-phone"></i> Call </a>
+                        <a class="btn btn-xs btn-white"><i class="fa fa-envelope"></i> Email</a>
+                        <a class="btn btn-xs btn-white"><i class="fa fa-user-plus"></i> Follow</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+</div>

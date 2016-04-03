@@ -1,0 +1,20 @@
+<div class="wrapper wrapper-content animated fadeIn">
+    <div class="row">
+        
+
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Alerts</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <div>
+                        <uib-alert ng-repeat="alert in main.alerts" type="{{alert.type}}" close="main.closeAlert($index)"><i class="fa {{alert.icon}}"></i>{{alert.msg}}  <div style="float:right; font-size:10px">{{alert.time | date: 'dd-MMM-yyyy hh:mm a'}}</div></uib-alert>
+                        <button class='btn btn-white' ng-click="main.addAlert()">Add Test Alert</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

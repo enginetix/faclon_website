@@ -1,0 +1,115 @@
+<style>     
+    .section{clear:both;padding:0;margin:0}
+    .col{
+        border-radius: 25px;
+        border: 2px solid #73AD21;
+        background-color:#f4f4f4;
+        padding: 4px;
+        height:30px;
+        text-align:center;
+        display:block;
+        float:left;
+        margin:1% 0 1% 1.6%
+    }
+    .col:first-child{margin-left:0}
+    .col:hover{background-color:#f0f0ff}
+    .group:before,.group:after{content:"";display:table}
+    .group:after{clear:both}
+    .c3of4{width:74.6%}
+    .c1of4{width:50px;}
+</style>
+
+<div class="row">
+        <div class="row col-sm-12">
+            <div class="row">
+
+                <br/><br/><br/>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="control-label" for="order_id">Name of new variable</label>
+                    <input type="text" id="order_id" name="order_id" value="" placeholder="heightTank" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="control-label" for="status">Description for variable</label>
+                    <input type="text" id="status" name="status" value="" placeholder="Height of tank" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="control-label" for="customer">Device Name</label>
+                    <input type="text" id="customer" name="customer" value="" placeholder="Device 1" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row col-sm-12">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="control-label" for="date_added">Date of activation</label>
+                    <div class="input-group date">
+                        <span class="input-group-addon"></span><input id="date_added" type="text" class="form-control" value="03/04/2016">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="control-label" for="amount">Short Description</label>
+                    <input type="text" id="amount" name="amount" value="" placeholder="Stored height of tank" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <button class="avtive btn-primary">Add Variable</button>
+            </div>
+        </div>
+
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content">
+          <!--Middle box effect  <div class="middle-box text-center animated fadeInRightBig"> -->
+                
+                <!-- Declare the Custom Variables View -->
+    <div ng-controller="calculatorController">
+        
+        <div class="section group"> <!-- Display the result row -->
+            <div class="col c3of4">{{ calculator.currentDisplay }}</div>
+            <div ng-click="resetClicked()" class="col c1of4">C</div>
+        </div>
+        <div class="section group"> <!-- Display the 1st number row -->
+            <div ng-click="numberButtonClicked(1)" class="col c1of4">1</div>
+            <div ng-click="numberButtonClicked(2)" class="col c1of4">2</div>
+            <div ng-click="numberButtonClicked(3)" class="col c1of4">3</div>
+            <div ng-click="operationButtonClicked('+')" class="col c1of4">+</div>
+        </div>
+        <div class="section group"> <!-- Display the 2nd number row -->
+            <div ng-click="numberButtonClicked(4)" class="col c1of4">4</div>
+            <div ng-click="numberButtonClicked(5)" class="col c1of4">5</div>
+            <div ng-click="numberButtonClicked(6)" class="col c1of4">6</div>
+            <div ng-click="operationButtonClicked('-')" class="col c1of4">-</div>
+        </div>
+        <div class="section group"> <!-- Display the 3rd number row -->
+            <div ng-click="numberButtonClicked(7)" class="col c1of4">7</div>
+            <div ng-click="numberButtonClicked(8)" class="col c1of4">8</div>
+            <div ng-click="numberButtonClicked(9)" class="col c1of4">9</div>
+            <div ng-click="enterClicked()" class="col c1of4">Enter</div>
+        </div>
+        <div class="section group"> <!-- Display the 3rd number row -->
+            <div ng-click="numberButtonClicked(7)" class="col c1of4">max</div>
+            <div ng-click="numberButtonClicked(8)" class="col c1of4">0</div>
+            <div ng-click="numberButtonClicked(9)" class="col c1of4">average</div>
+            <div ng-click="enterClicked()" class="col c1of4">mod</div>
+        </div>
+    </div>
+
+    <p>Work is pending here </p>
+    <!-- Custom variables view ending here -->
+
+            <!--</div>  middle box effect-->
+        </div>
+    </div>
+</div>
+
+<div ng-include="'/views/custom_variables/variables_lists.html'"></div>
