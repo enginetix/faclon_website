@@ -1,0 +1,59 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-9">
+        <h2><strong>My Devices </strong> <i class="fa fa-long-arrow-right "></i> Add Device</h2>
+    </div>
+</div>
+
+<style>
+    .wizard a, .tabcontrol a {
+        width: 150px;
+    }
+</style>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+
+                <div class="ibox-content wizard">
+                    
+
+                    <div class="steps clearfix">
+                        <br/>
+                        <ul>
+
+                            <li ui-sref-active="current">
+                                <a ui-sref=".step_one" class="btn-default" align="center">Name & Info</a>
+                            </li>
+                            <li ui-sref-active="current">
+                                <a ui-sref=".step_two" class="btn-default" align="center">Basic Settings</a>
+                            </li>
+                            <li ui-sref-active="current">
+                                <a ui-sref=".step_three" class="btn-default" align="center">Add Widgets</a>
+                            </li>
+                            <li ui-sref-active="current">
+                                <a ui-sref=".step_four" class="btn-default" align="center">Preview Device</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                      <br/>
+                    <div class="wizard">
+                        <div class="content">
+
+                        <form name="signupForm" ng-submit="processForm()" class="p-lg">
+
+                            <!-- our nested state views will be injected here -->
+                            <div id="form-views" ui-view></div>
+                        </form>
+
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

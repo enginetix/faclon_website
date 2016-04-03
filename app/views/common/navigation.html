@@ -14,8 +14,8 @@
                             </span>
                     </a>
                     <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
-                        <li><a ui-sref="app.profile">Profile</a></li>
-                        <li><a ui-sref="app.bill">Billing</a></li>
+                        <li><a ui-sref="user.profile">Profile</a></li>
+                        <li><a ui-sref="user.bill">Billing</a></li>
                         <li><a ui-sref="app.usage">Usage</a></li>
                         <!-- <li><a ui-sref="mailbox.inbox">Mailbox</a></li> -->
                         <li class="divider"></li>
@@ -37,16 +37,16 @@
                 </ul>
             </li>
 
-            <li ng-class="{active: $state.includes('app')}">
+            <li ng-class="{active: $state.includes('devices')}">
                 <a href=""><i class="fa fa-desktop"></i> <span class="nav-label">{{ 'My Devices' | translate }}</span></a>
-                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('app')}">
-                    <li ui-sref-active="active"><a ui-sref="forms.wizard.step_one"><i class="fa fa-plus-square"></i> Add Device</a></li>
-                    <li ui-sref-active="active"><a ui-sref="app.contacts_2"><i class="fa fa-th"></i> View Devices</a></li>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('devices')}">
+                    <li ui-sref-active="active"><a ui-sref="devices.wizard.step_one"><i class="fa fa-plus-square"></i> Add Device</a></li>
+                    <li ui-sref-active="active"><a ui-sref="devices.view"><i class="fa fa-th"></i> View Devices</a></li>
                 </ul>
             </li>
 
             <li ui-sref-active="active">
-                <a ui-sref="ui.notifications_rishi"><i class="fa fa-bell"></i> <span class="nav-label">{{ 'Notifications' | translate }}</span> </a>
+                <a ui-sref="notifications.page"><i class="fa fa-bell"></i> <span class="nav-label">{{ 'Notifications' | translate }}</span> </a>
             </li>
 
             <li ng-class="{active: $state.includes('app')}">
@@ -61,8 +61,8 @@
                 <a href=""><i class="fa fa-cogs"></i> <span class="nav-label">{{ 'Widgets' | translate }}</span></a>
             </li>
 
-            <li ng-class="{active: $state.includes('app')}">
-                <a href=""><i class="fa fa-smile-o"></i> <span class="nav-label">{{ 'Help' | translate }}</span></a>
+            <li ng-class="{active: $state.includes('help')}">
+                <a ui-sref="help.page"><i class="fa fa-smile-o"></i> <span class="nav-label">{{ 'FAQ' | translate }}</span></a>
             </li>
 
             <li ui-sref-active="active">

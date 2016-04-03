@@ -744,21 +744,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
             templateUrl: "views/errorTwo.html",
             data: { pageTitle: '500', specialClass: 'gray-bg' }
         })
-        .state('custom_variables', {
-            abstract: true,
-            url: "/ui",
-            templateUrl: "views/custom_variables/custom_variables.html"
-        })
-        .state('custom_variables.add', {
-            url: "/custom_variables_add",
-            templateUrl: "views/custom_variables/custom_variables_add.html",
-            data: { pageTitle: 'Off canvas menu'}
-        })
-        .state('custom_variables.view', {
-            url: "/custom_variables_view",
-            templateUrl: "views/custom_variables/custom_variables_view.html",
-            data: { pageTitle: 'Off canvas menu'}
-        })
+        
         .state('ui', {
             abstract: true,
             url: "/ui",
@@ -1404,6 +1390,101 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
             url: "/off_canvas",
             templateUrl: "views/off_canvas.html",
             data: { pageTitle: 'Off canvas menu', specialClass: 'canvas-menu' }
+        })
+        .state('help', {
+            abstract: true,
+            url: "/ui",
+            templateUrl: "views/pages/help/help_template.html"
+        })
+        .state('help.page', {
+            url: "/help_page",
+            templateUrl: "views/pages/help/help_page.html",
+            data: { pageTitle: 'Happy to Help'}
+        })
+        .state('custom_variables', {
+            abstract: true,
+            url: "/ui",
+            templateUrl: "views/pages/custom_variables/custom_variables.html"
+        })
+        .state('custom_variables.add', {
+            url: "/custom_variables_add",
+            templateUrl: "views/pages/custom_variables/custom_variables_add.html",
+            data: { pageTitle: 'Off canvas menu'}
+        })
+        .state('custom_variables.view', {
+            url: "/custom_variables_view",
+            templateUrl: "views/pages/custom_variables/custom_variables_view.html",
+            data: { pageTitle: 'Off canvas menu'}
+        })
+        .state('notifications', {
+            abstract: true,
+            url: "/ui",
+            templateUrl: "views/common/content.html"
+        })
+        .state('notifications.page', {
+            url: "/notifications_page",
+            templateUrl: "views/pages/notifications/notifications_page.html",
+            data: { pageTitle: 'Notifications' }
+        })
+        .state('devices', {
+            abstract: true,
+            url: "/views/pages/mydevices",
+            templateUrl: "views/common/content.html",
+        })
+        .state('devices.wizard', {
+            url: "/wizard",
+            templateUrl: "views/pages/mydevices/devices_wizard.html",
+            controller: wizardCtrl,
+            data: { pageTitle: 'Devices Wizard' },
+            resolve: {
+                loadPlugin: function ($ocLazyLoad) {
+                    return $ocLazyLoad.load([
+                        {
+                            files: ['css/plugins/steps/jquery.steps.css']
+                        }
+                    ]);
+                }
+            }
+        })
+        .state('devices.wizard.step_one', {
+            url: '/step_one',
+            templateUrl: 'views/pages/mydevices/wizard/step_one.html',
+            data: { pageTitle: 'My Devices' }
+        })
+        .state('devices.wizard.step_two', {
+            url: '/step_two',
+            templateUrl: 'views/pages/mydevices/wizard/step_two.html',
+            data: { pageTitle: 'My Devices' }
+        })
+        .state('devices.wizard.step_three', {
+            url: '/step_three',
+            templateUrl: 'views/pages/mydevices/wizard/step_three.html',
+            data: { pageTitle: 'My Devices'}
+        })
+        .state('devices.wizard.step_four', {
+            url: '/step_four',
+            templateUrl: 'views/pages/mydevices/wizard/step_four.html',
+            data: { pageTitle: 'My Devices' }
+        })
+        .state('devices.view', {
+            url: "/devices_view",
+            templateUrl: "views/pages/mydevices/devices_view.html",
+            data: { pageTitle: 'View Devices' }
+        })
+        .state('user', {
+            abstract: true,
+            url: "/user",
+            templateUrl: "views/common/content.html",
+        })
+        .state('user.profile', {
+            url: "/profile",
+            templateUrl: "views/pages/user/profile.html",
+            data: { pageTitle: 'Profile' }
+        })
+        .state('user.bill', {
+            url: "/billing",
+            templateUrl: "views/pages/user/billing.html",
+            data: { pageTitle: 'Faclon Services Payments' }
         });
 
 }
