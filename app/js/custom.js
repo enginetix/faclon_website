@@ -86,6 +86,7 @@ angular.module('CalculatorApp', [])
         // Add the calculator-controller to module
         calculatorModule.controller('calculatorController', ['$scope', function ($scope) {
             $scope.calculator = calculatorModel;
+            
       $scope.numberButtonClicked = function(clickedNumber) {
         if(calculatorModel.currentNumber === "0") {
           calculatorModel.currentNumber = "";

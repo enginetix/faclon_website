@@ -71,14 +71,15 @@
             <div ng-click="numberButtonClicked(7)" class="col c1of4">7</div>
             <div ng-click="numberButtonClicked(8)" class="col c1of4">8</div>
             <div ng-click="numberButtonClicked(9)" class="col c1of4">9</div>
-            <div ng-click="enterClicked()" class="col c1of4">=</div>      
+            <div ng-click="operationButtonClicked('*')" class="col c1of4">*</div>
+                
         </div>
 
         <div class="section group"> <!-- Display the 3rd number row -->
-            <div ng-click="numberButtonClicked(7)" class="col c1of4">max</div>
-            <div ng-click="numberButtonClicked(8)" class="col c1of4">0</div>
-            <div ng-click="numberButtonClicked(9)" class="col c1of4">average</div>
             <div ng-click="resetClicked()" class="col c1of4">C</div>
+            <div ng-click="numberButtonClicked(8)" class="col c1of4">0</div>
+            <div ng-click="enterClicked()" class="col c1of4">=</div>  
+            <div ng-click="operationButtonClicked('/')" class="col c1of4">/</div>
         </div>
     </div>  
 
@@ -107,7 +108,6 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th>Select</th>
                         <th>Variable Name</th>
                         <th>Device </th>
                         <th>Date Created</th>        
@@ -115,29 +115,25 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><input icheck type="checkbox" ng-model="main.checkOne"></td>
-                        <td>var 1</td>
+                        <td ng-click="numberButtonClicked('var 1')">var 1</td>
                         <td>Device 1</td>
                         <td>Jul 14, 2013</td>
                         
                     </tr>
                     <tr>
-                        <td><input icheck type="checkbox" ng-model="main.unCheck1"></td>
-                        <td>var 2.1</td>
+                        <td ng-click="numberButtonClicked('var 2.1')">var 2.1</td>
                         <td>Device 2</td>
                         <td>Jul 16, 2013</td>
                         
                     </tr>
                     <tr>
-                        <td><input icheck type="checkbox" ng-model="main.unCheck2"></td>
-                        <td>var 2.2</td>
+                        <td ng-click="numberButtonClicked('var 2.2')">var 2.2</td>
                         <td>Device 2</td>
                         <td>Jul 18, 2013</td>
                         
                     </tr>
                     <tr>
-                        <td><input icheck type="checkbox" ng-model="main.unCheck3"></td>
-                        <td>var 3</td>
+                        <td ng-click="numberButtonClicked('var 3')">var 3</td>
                         <td>Device 3</td>
                         <td>Jul 22, 2013</td>
                         
