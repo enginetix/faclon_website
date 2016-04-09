@@ -17,6 +17,11 @@
         width: 80%;
         border-radius: 5px;
         border: 2px solid #676a6c;
+        margin: 0 auto;
+        padding: 0 25px;
+    }
+    .custVarList{
+        border-top: 2px solid #676a6c;
     }
 </style>
 
@@ -37,14 +42,14 @@
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            <label class="control-label" for="order_id">Name of new variable</label>
-            <input type="text" placeholder="heightTank" class="form-control">
+            <label>Name of new variable</label>
+            <input type="text" ng-model="varName" placeholder="heightTank" class="form-control">
         </div>
     </div>
     <div class="col-sm-5">
         <div class="form-group">
-            <label class="control-label" for="status">Description for variable</label>
-            <input type="text" placeholder="Height of tank" class="form-control">
+            <label>Description for variable</label>
+            <input type="text" ng-model="varDesc" placeholder="Height of tank" class="form-control">
         </div>
     </div>
     <div class="col-sm-4" style="height: 71.71px;">
@@ -55,7 +60,7 @@
     </div>
 
 
-<div class="row" id="custom_display_div"><h2> Expression : <input id="custom_display" type="text" ng-model="expression"></h2></div>
+<div class="row" id="custom_display_div"><h2> Expression : <input ng-keydown="addKeyboardIndex()" id="custom_display" type="text" ng-model="expression"></h2></div>
 
 </div>
 
@@ -82,46 +87,35 @@
                                 <button type="button" class="btn btn-sm btn-primary"> Go!</button> </span></div>
             </div>
         </div>
+
         <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
                 <tr>
                     <th>Variable Name</th>
-                    <th>Device </th>
+                    <th>Device Name</th>
                     <th>Date Created</th>        
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-click="addToExpression('var 1')">
-                    <td>var 1</td>
-                    <td>Device 1</td>
-                    <td>Jul 14, 2013</td>
-                </tr>
-                <tr ng-click="addToExpression('var 2.1')">
-                    <td>var 2.1</td>
-                    <td>Device 2</td>
-                    <td>Jul 16, 2013</td>
-                </tr>
-                <tr ng-click="addToExpression('var 2.2')">
-                    <td >var 2.2</td>
-                    <td>Device 2</td>
-                    <td>Jul 18, 2013</td>
-                </tr>
-                <tr ng-click="addToExpression('var 3')">
-                    <td>var 3</td>
-                    <td>Device 3</td>
-                    <td>Jul 22, 2013</td>
+                <tr ng-repeat="v in customVarList" ng-click="addToExpression(v.name)">
+                    <div>
+                    <td><ng-button>{{v.name}}</ng-button></td>
+                    <td>{{v.device}}</td>
+                    <td>{{v.date}}</td>
+                    </div>
                 </tr>
                 </tbody>
             </table>
         </div>
+
     </div>
 </div>  
 <!-- custom variables list ends here -->
 
 <div class="col-lg-6">
     <div class="section group"> <!-- Display the 1st number row -->
-        <md-button class="custom_buttons" ng-click="addToExpression('1')"> 1 </md-button>
+        <md-button class="custom_buttons animation_select" data-animation="bounce" ng-click="addToExpression('1')"> 1 </md-button>
         <md-button class="custom_buttons" ng-click="addToExpression('2')"> 2 </md-button>
         <md-button class="custom_buttons" ng-click="addToExpression('3')"> 3 </md-button>
         <md-button class="custom_buttons" ng-click="addToExpression('+')"> + </md-button>
@@ -151,3 +145,40 @@
         <md-button class="custom_buttons" ng-click="addToExpression(']')"> ] </md-button>
     </div>  
 </div>
+
+<div class="col-lg-6">
+<md-list>
+  <md-list-item class="row md-2-line custVarList" style="height: 50px" ng-repeat="v in customVarList">
+  <md-checkbox></md-checkbox>
+    <div class="md-list-item-text">
+        <div class="col-lg-4"><h3>{{v.name}}</h3></div>
+        <div class="col-lg-4"><p>{{v.device}}</p></div>
+        <div class="col-lg-4"><p>{{v.date}}</p></div>  
+    </div>
+  </md-list-item>
+</md-list>
+</div>
+
+<div class="col-lg-6">
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Variable Name</th>
+            <th>Device</th>
+            <th>Date Created</th>     
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="v in customVarList" ng-click="addToExpression(v.name)">
+            <div>
+            <td><ng-button>{{v.name}}</ng-button></td>
+            <td>{{v.device}}</td>
+            <td>{{v.date}}</td>
+            </div>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+

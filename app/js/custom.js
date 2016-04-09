@@ -21,11 +21,47 @@
 (function(){
   angular.module('addVariable', ['ngMaterial'])
   .controller('myaddCtrl', function($scope) {
+
+      $scope.customVarList = [
+      {
+        name : "height",
+        descritpion: "",
+        device: "Device 1",
+        date: "Jul 14, 2013",
+        unit: "kg",
+        varExpression: "chapmion chapmion"   
+      },
+      {
+        name : "weight",
+        descritpion: "value",
+        device: "Device 2",
+        date: "Jul 18, 2013",
+        unit: "m",
+        varExpression: "fuck that slut"   
+      },
+      {
+        name : "length",
+        descritpion: "value",
+        device: "Device 2",
+        date: "Jul 20, 2013",
+        unit: "lb",
+        varExpression: "Suck my dick"   
+      },
+      {
+        name : "breadth",
+        descritpion: "value",
+        device: "Device 3",
+        date: "Jul 22, 2013",
+        unit: "g",
+        varExpression: "Hahaha"   
+      }
+      ];
+
       var indexes = [0];
       var last_index = 0;
-      $scope.expression = "";
+      $scope.expression = " ";
       $scope.addToExpression = function(value){
-        $scope.expression += " ";
+        //$scope.expression += " ";
         $scope.expression += value;
         last_index = ($scope.expression).length;
         indexes.push(last_index-1);
@@ -48,6 +84,14 @@
         indexes = [0];
         last_index = 0;
       };
+
+      $scope.addVariable = function(){
+
+      }
+
+      
+
+
   });
 
 })();
