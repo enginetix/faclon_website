@@ -1528,6 +1528,7 @@ function modalDemoCtrl($scope, $uibModal) {
             windowClass: "animated flipInY"
         });
     };
+
 };
 
 function ModalInstanceCtrl ($scope, $uibModalInstance) {
