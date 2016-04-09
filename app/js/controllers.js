@@ -1513,10 +1513,15 @@ function modalDemoCtrl($scope, $uibModal) {
         });
     };
 
-    $scope.open3 = function (size) {
+    $scope.open3 = function (size, cust_var) {
         var modalInstance = $uibModal.open({
             templateUrl: 'views/modal_example3.html',
             size: size,
+            resolve: {
+                var_modal: function(){
+                    return cust_var;
+                }
+            },
             controller: ModalInstanceCtrl
         });
     };
@@ -1531,7 +1536,11 @@ function modalDemoCtrl($scope, $uibModal) {
 
 };
 
-function ModalInstanceCtrl ($scope, $uibModalInstance) {
+function ModalInstanceCtrl ($scope, $uibModalInstance, var_modal) {
+
+    $scope.custVar = var_modal;
+
+    console.log($scope.test);
 
     $scope.ok = function () {
         $uibModalInstance.close();
@@ -1540,60 +1549,6 @@ function ModalInstanceCtrl ($scope, $uibModalInstance) {
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     };
-
-
-    $scope.states = [
-        'Alabama',
-        'Alaska',
-        'Arizona',
-        'Arkansas',
-        'California',
-        'Colorado',
-        'Connecticut',
-        'Delaware',
-        'Florida',
-        'Georgia',
-        'Hawaii',
-        'Idaho',
-        'Illinois',
-        'Indiana',
-        'Iowa',
-        'Kansas',
-        'Kentucky',
-        'Louisiana',
-        'Maine',
-        'Maryland',
-        'Massachusetts',
-        'Michigan',
-        'Minnesota',
-        'Mississippi',
-        'Missouri',
-        'Montana',
-        'Nebraska',
-        'Nevada',
-        'New Hampshire',
-        'New Jersey',
-        'New Mexico',
-        'New York',
-        'North Carolina',
-        'North Dakota',
-        'Ohio',
-        'Oklahoma',
-        'Oregon',
-        'Pennsylvania',
-        'Rhode Island',
-        'South Carolina',
-        'South Dakota',
-        'Tennessee',
-        'Texas',
-        'Utah',
-        'Vermont',
-        'Virginia',
-        'Washington',
-        'West Virginia',
-        'Wisconsin',
-        'Wyoming'
-    ];
 
 };
 

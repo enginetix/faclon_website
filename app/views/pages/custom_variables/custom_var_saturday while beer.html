@@ -154,6 +154,48 @@
     </div>  
 </div>
 
+<div class="col-lg-6">
+<md-list>
+  <md-list-item class="row md-2-line custVarList" style="height: 50px" ng-repeat="v in customVarList">
+  <md-checkbox></md-checkbox>
+    <div class="md-list-item-text">
+        <div class="col-lg-4"><h3>{{v.name}}</h3></div>
+        <div class="col-lg-4"><p>{{v.device}}</p></div>
+        <div class="col-lg-4"><p>{{v.date}}</p></div>  
+    </div>
+  </md-list-item>
+</md-list>
+</div>
 
+<div class="col-lg-6">
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <div>
+                <th>Variable</th>
+                <th>Device</th>
+                <th>Date</th> 
+                <th>View</th> 
+            </div>  
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="v in customVarList" ng-click="addToExpression(v.name)">
+            <div>
+                <td><ng-button>{{v.name}}</ng-button></td>
+                <td>{{v.device}}</td>
+                <td>{{v.date}}</td>
+            </div>
+            <td>
+                <div ng-controller="modalDemoCtrl">
+                    <button class="btn btn-info btn-circle" ng-click="open3('sm', v)"><i class="fa fa-eye"></i></button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
 
 
