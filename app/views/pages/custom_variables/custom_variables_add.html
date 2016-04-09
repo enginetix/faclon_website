@@ -1,148 +1,153 @@
-<style>     
-    .section{clear:both;padding:0;margin:0;margin-left: 30px;}
-    .col{
-        border-radius: 25px;
-        border: 2px solid #73AD21;
+<style type="text/css">
+    .custom_buttons{
+        border-radius: 5px;
+        border: 2px solid #676a6c;
         background-color: white;
-        padding: 4px;
-        height:30px;
-        text-align:center;
-        display:block;
-        float:left;
-        margin:3% 5% 5% 5%
+        font-size: 15px;
     }
-    .col:first-child{margin-left:0}
-    .col:hover{background-color:#f0f0ff}
-    .group:before,.group:after{content:"";display:table}
-    .group:after{clear:both}
-    .c3of4{width:96%;height: 40px;}
-    .c1of4{width:75px;}
+    #custom_display_div{
+        width: 92%;
+        border-radius: 5px;
+        border: 2px solid #676a6c;
+        padding-left: 20px;
+        padding-bottom: 8px;
+        margin: 20px 0 40px 16px;
+    }
+    #custom_display{
+        width: 80%;
+        border-radius: 5px;
+        border: 2px solid #676a6c;
+    }
 </style>
 
 
 
-<div class="col-lg-12" ng-controller="calculatorController">
-    
-    <div class="row col-lg-12">
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-9">
+        <h2><strong>Custom Variables </strong> 
+            <i class="fa fa-long-arrow-right "></i> 
+            Add Variable</h2>
+    </div>
+</div>
+
+<div ng-controller = "myaddCtrl">
+<div class="row col-lg-12">
+    <div class="row">
+        <br/>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label class="control-label" for="order_id">Name of new variable</label>
+            <input type="text" placeholder="heightTank" class="form-control">
+        </div>
+    </div>
+    <div class="col-sm-5">
+        <div class="form-group">
+            <label class="control-label" for="status">Description for variable</label>
+            <input type="text" placeholder="Height of tank" class="form-control">
+        </div>
+    </div>
+    <div class="col-sm-4" style="height: 71.71px;">
+        <button class="avtive btn-primary" style="margin-top: 26px; margin-left: 20px;">Add Variable</button>
+    </div>
+    <div class="row">
+        <br/>
+    </div>
+
+
+<div class="row" id="custom_display_div"><h2> Expression : <input id="custom_display" type="text" ng-model="expression"></h2></div>
+
+</div>
+
+<!-- This is a list of custom varibles already been made -->
+<div class="col-lg-6">
+
+    <div class="ibox-title">
+        <h5>Other Custom Variables</h5> 
+    </div>
+
+    <div class="ibox-content">
         <div class="row">
-
-            <br/><br/><br/>
-        </div>
-        <div class="col-sm-4">
-            <div class="form-group">
-                <label class="control-label" for="order_id">Name of new variable</label>
-                <input type="text" id="order_id" name="order_id" value="" placeholder="heightTank" class="form-control">
+            <div class="col-lg-6 m-b-xs"><select class="input-sm form-control input-s-sm inline">
+                <option value="0">All Devices</option>
+                <option value="1">Device 1</option>
+                <option value="2">Device 2</option>
+                <option value="3">Device 3</option>
+                <option value="4">Device 4</option>
+            </select>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="input-group"><input type="text" placeholder="Search" class="input-sm form-control"> <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-primary"> Go!</button> </span></div>
             </div>
         </div>
-        <div class="col-sm-4">
-            <div class="form-group">
-                <label class="control-label" for="status">Description for variable</label>
-                <input type="text" id="status" name="status" value="" placeholder="Height of tank" class="form-control">
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <button class="avtive btn-primary">Add Variable</button>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Variable Name</th>
+                    <th>Device </th>
+                    <th>Date Created</th>        
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-click="addToExpression('var 1')">
+                    <td>var 1</td>
+                    <td>Device 1</td>
+                    <td>Jul 14, 2013</td>
+                </tr>
+                <tr ng-click="addToExpression('var 2.1')">
+                    <td>var 2.1</td>
+                    <td>Device 2</td>
+                    <td>Jul 16, 2013</td>
+                </tr>
+                <tr ng-click="addToExpression('var 2.2')">
+                    <td >var 2.2</td>
+                    <td>Device 2</td>
+                    <td>Jul 18, 2013</td>
+                </tr>
+                <tr ng-click="addToExpression('var 3')">
+                    <td>var 3</td>
+                    <td>Device 3</td>
+                    <td>Jul 22, 2013</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
+</div>  
+<!-- custom variables list ends here -->
 
-
-
-    <div class="section group"> <!-- Display the result row -->
-        <div class="col c3of4">{{ calculator.currentDisplay }}</div>
-        <!-- <div ng-click="resetClicked()" class="col c1of4">C</div> -->
+<div class="col-lg-6">
+    <div class="section group"> <!-- Display the 1st number row -->
+        <md-button class="custom_buttons" ng-click="addToExpression('1')"> 1 </md-button>
+        <md-button class="custom_buttons" ng-click="addToExpression('2')"> 2 </md-button>
+        <md-button class="custom_buttons" ng-click="addToExpression('3')"> 3 </md-button>
+        <md-button class="custom_buttons" ng-click="addToExpression('+')"> + </md-button>
     </div>
-
-
-    <div class="col-lg-6">
-    
-        <div class="ibox-title">
-            <h5>Other Custom Variables</h5> 
-        </div>
-
-        <div class="ibox-content">
-            <div class="row">
-                <div class="col-lg-6 m-b-xs"><select class="input-sm form-control input-s-sm inline">
-                    <option value="0">Device 1</option>
-                    <option value="1">Device 2</option>
-                    <option value="2">Device 3</option>
-                    <option value="3">Device 4</option>
-                </select>
-                </div>
-                
-                <div class="col-lg-6">
-                    <div class="input-group"><input type="text" placeholder="Search" class="input-sm form-control"> <span class="input-group-btn">
-                                    <button type="button" class="btn btn-sm btn-primary"> Go!</button> </span></div>
-                </div>
-            </div>
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Variable Name</th>
-                        <th>Device </th>
-                        <th>Date Created</th>        
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td ng-click="numberButtonClicked('var 1')">var 1</td>
-                        <td>Device 1</td>
-                        <td>Jul 14, 2013</td>
-                        
-                    </tr>
-                    <tr>
-                        <td ng-click="numberButtonClicked('var 2.1')">var 2.1</td>
-                        <td>Device 2</td>
-                        <td>Jul 16, 2013</td>
-                        
-                    </tr>
-                    <tr>
-                        <td ng-click="numberButtonClicked('var 2.2')">var 2.2</td>
-                        <td>Device 2</td>
-                        <td>Jul 18, 2013</td>
-                        
-                    </tr>
-                    <tr>
-                        <td ng-click="numberButtonClicked('var 3')">var 3</td>
-                        <td>Device 3</td>
-                        <td>Jul 22, 2013</td>
-                        
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <div class="section group"> <!-- Display the 2nd number row -->
+        <md-button class="custom_buttons" ng-click="addToExpression('4')"> 4 </md-button>
+        <md-button class="custom_buttons" ng-click="addToExpression('5')"> 5 </md-button>
+        <md-button class="custom_buttons" ng-click="addToExpression('6')"> 6 </md-button>
+        <md-button class="custom_buttons" ng-click="addToExpression('-')"> - </md-button>
+    </div>
+    <div class="section group"> <!-- Display the 3rd number row -->
+        <md-button class="custom_buttons" ng-click="addToExpression('7')"> 7 </md-button>
+        <md-button class="custom_buttons" ng-click="addToExpression('8')"> 8 </md-button>
+        <md-button class="custom_buttons" ng-click="addToExpression('9')"> 9 </md-button>
+        <md-button class="custom_buttons" ng-click="addToExpression('*')"> * </md-button>
+    </div>
+    <div class="section group"> <!-- Display the 4th number row -->
+        <md-button class="custom_buttons" ng-click="backSpace()"> Del </md-button>
+        <md-button class="custom_buttons" ng-click="addToExpression('0')"> 0 </md-button>
+        <md-button class="custom_buttons" ng-click="clearExpression()"> C </md-button>
+        <md-button class="custom_buttons" ng-click="addToExpression('/')"> / </md-button>
     </div>  
-
-    <div class="col-lg-6">
-        <div class="section group"> <!-- Display the 1st number row -->
-            <div ng-click="numberButtonClicked(1)" class="col c1of4">1</div>
-            <div ng-click="numberButtonClicked(2)" class="col c1of4">2</div>
-            <div ng-click="numberButtonClicked(3)" class="col c1of4">3</div>
-            <div ng-click="operationButtonClicked('+')" class="col c1of4">+</div>
-        </div>
-
-        <div class="section group"> <!-- Display the 2nd number row -->
-            <div ng-click="numberButtonClicked(4)" class="col c1of4">4</div>
-            <div ng-click="numberButtonClicked(5)" class="col c1of4">5</div>
-            <div ng-click="numberButtonClicked(6)" class="col c1of4">6</div>
-            <div ng-click="operationButtonClicked('-')" class="col c1of4">-</div>
-        </div>
-
-        <div class="section group"> <!-- Display the 3rd number row -->
-            <div ng-click="numberButtonClicked(7)" class="col c1of4">7</div>
-            <div ng-click="numberButtonClicked(8)" class="col c1of4">8</div>
-            <div ng-click="numberButtonClicked(9)" class="col c1of4">9</div>
-            <div ng-click="operationButtonClicked('*')" class="col c1of4">*</div>
-                
-        </div>
-
-        <div class="section group"> <!-- Display the 3rd number row -->
-            <div ng-click="resetClicked()" class="col c1of4">C</div>
-            <div ng-click="numberButtonClicked(8)" class="col c1of4">0</div>
-            <div ng-click="enterClicked()" class="col c1of4">=</div>  
-            <div ng-click="operationButtonClicked('/')" class="col c1of4">/</div>
-        </div>
+    <div class="section group"> <!-- Display the 5th number row -->
+        <md-button class="custom_buttons" ng-click="addToExpression('(')"> ( </md-button>
+        <md-button class="custom_buttons" ng-click="addToExpression(')')"> ) </md-button>
+        <md-button class="custom_buttons" ng-click="addToExpression('[')"> [ </md-button>
+        <md-button class="custom_buttons" ng-click="addToExpression(']')"> ] </md-button>
     </div>  
-
 </div>

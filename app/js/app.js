@@ -12,8 +12,7 @@
         'ngSanitize',                   // ngSanitize
         'ngMaterial',					// ng Material
         'checkboxDemo1',
-        'calculatorApp',
-        'calculatorModule'
+        'addVariable'
     ])
     .filter('rishi', function(){
          // In the return function, we must pass in a single parameter which will be the data we will work on.

@@ -1404,7 +1404,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
         .state('custom_variables', {
             abstract: true,
             url: "/ui",
-            templateUrl: "views/pages/custom_variables/custom_variables.html"
+            templateUrl: "views/common/content.html"
         })
         .state('custom_variables.add', {
             url: "/custom_variables_add",

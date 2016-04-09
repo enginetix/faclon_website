@@ -1,4 +1,4 @@
-<nav onmouseover="minimalize()" class="navbar-default navbar-static-side" role="navigation">
+<nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
         <ul side-navigation class="nav metismenu" id="side-menu">
             <li class="nav-header">
@@ -40,8 +40,8 @@
             <li ng-class="{active: $state.includes('devices')}">
                 <a href=""><i class="fa fa-desktop"></i> <span class="nav-label">{{ 'My Devices' | translate }}</span></a>
                 <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('devices')}">
-                    <li ui-sref-active="active"><a ui-sref="devices.wizard.step_one"><i class="fa fa-plus-square"></i> Add Device</a></li>
-                    <li ui-sref-active="active"><a ui-sref="devices.view"><i class="fa fa-th"></i> View Devices</a></li>
+                    <li ui-sref-active="active"><a ui-sref="devices.wizard.step_one">Add Device</a></li>
+                    <li ui-sref-active="active"><a ui-sref="devices.view">View Devices</a></li>
                 </ul>
             </li>
 
@@ -54,10 +54,14 @@
             </li>
 
             <li ng-class="{active: $state.includes('custom_variables')}">
-                <a ui-sref="custom_variables.view"><i class="fa fa-wrench"></i> <span class="nav-label">{{ 'Custom Variables' | translate }}</span> </a>
+                <a href=""><i class="fa fa-wrench"></i> <span class="nav-label">{{ 'Custom Variables' | translate }}</span></a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('custom_variables')}">
+                    <li ui-sref-active="active"><a ui-sref="custom_variables.add">Add Variable</a></li>
+                    <li ui-sref-active="active"><a ui-sref="custom_variables.view">View Variables</a></li>
+                </ul>
             </li>
 
-            <li ng-class="{active: $state.includes('app')}">
+            <li ng-class="{active: $state.includes('user')}">
                 <a href=""><i class="fa fa-cogs"></i> <span class="nav-label">{{ 'Widgets' | translate }}</span></a>
             </li>
 
@@ -256,71 +260,3 @@
     </div>
 </nav>
 
-<div onmouseover="minimalize()"  style="position:fixed; float left; height:100%; width:70px; z-index:100; opacity:0" id="curtain"></div>
-<div onmouseover="minimalizeout()"  style="position:fixed; float left; height:100%; width:100%;left:220px; z-index:-10; opacity:0" id="curtain2"></div>
-
-<script type="text/javascript">
-
-window.onload = minimalizeout();
-var open=0;
-
-function minimalize() {
-    if(open==0)
-    {
-    open=1;
-    document.getElementById('curtain').style.width = "220px";
-    document.getElementById('curtain2').style.zIndex= "10000";
-    $("body").toggleClass("mini-navbar");
-    if (!$('body').hasClass('mini-navbar') || $('body').hasClass('body-small')) {
-        // Hide menu in order to smoothly turn on when maximize menu
-        $('#side-menu').hide();
-        console.log("sidebar expanded 1");
-        // For smoothly turn on menu
-        setTimeout(
-            function () {
-                $('#side-menu').fadeIn(400);
-            }, 200);
-    } else if ($('body').hasClass('fixed-sidebar')){
-        $('#side-menu').hide();
-        console.log("sidebar expanded 2");
-        setTimeout(
-            function () {
-                $('#side-menu').fadeIn(400);
-            }, 200);
-    } else {
-        // Remove all inline style from jquery fadeIn function to reset menu state
-        $('#side-menu').removeAttr('style');
-        console.log("sidebar expanded 3");
-    }
-  }
-};
-
-function minimalizeout() {
-    open=0;
-    document.getElementById('curtain').style.width = "70px";
-    document.getElementById('curtain2').style.zIndex= "-10";
-    $("body").toggleClass("mini-navbar");
-    if (!$('body').hasClass('mini-navbar') || $('body').hasClass('body-small')) {
-        // Hide menu in order to smoothly turn on when maximize menu
-        $('#side-menu').hide();
-        console.log("sidebar collapsed 1");
-        // For smoothly turn on menu
-        setTimeout(
-            function () {
-                $('#side-menu').fadeIn(400);
-            }, 200);
-    } else if ($('body').hasClass('fixed-sidebar')){
-        $('#side-menu').hide();
-        console.log("sidebar collapsed 2");
-        setTimeout(
-            function () {
-                $('#side-menu').fadeIn(400);
-            }, 200);
-    } else {
-        // Remove all inline style from jquery fadeIn function to reset menu state
-        $('#side-menu').removeAttr('style');
-        console.log("sidebar collapsed 3");
-    }
-};
-
-</script>
