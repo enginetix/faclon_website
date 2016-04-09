@@ -1,0 +1,83 @@
+$scope.customVarList = [
+      {
+        name : "height",
+        descritpion: "",
+        device: "Device 1",
+        date: "Jul 14, 2013",
+        unit: "kg",
+        varExpression: ""   
+      },
+      {
+        name : "weight",
+        descritpion: "value",
+        device: "Device 2",
+        date: "Jul 18, 2013",
+        unit: "m",
+        varExpression: ""   
+      },
+      {
+        name : "length",
+        descritpion: "value",
+        device: "Device 2",
+        date: "Jul 20, 2013",
+        unit: "lb",
+        varExpression: ""   
+      },
+      {
+        name : "breadth",
+        descritpion: "value",
+        device: "Device 3",
+        date: "Jul 22, 2013",
+        unit: "g",
+        varExpression: ""   
+      }
+      ];
+
+
+      $scope.customVarList = ['Anuj','Gupta','Kumar'];
+
+
+      <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Variable Name</th>
+                    <th>Device </th>
+                    <th>Date Created</th>        
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-click="addToExpression('var 1')">
+                    <td>var 1</td>
+                    <td>Device 1</td>
+                    <td>Jul 14, 2013</td>
+                </tr>
+                <tr ng-click="addToExpression('var 2.1')">
+                    <td>var 2.1</td>
+                    <td>Device 2</td>
+                    <td>Jul 16, 2013</td>
+                </tr>
+                <tr ng-click="addToExpression('var 2.2')">
+                    <td >var 2.2</td>
+                    <td>Device 2</td>
+                    <td>Jul 18, 2013</td>
+                </tr>
+                <tr ng-click="addToExpression('var 3')">
+                    <td>var 3</td>
+                    <td>Device 3</td>
+                    <td>Jul 22, 2013</td>
+                </tr>
+                </tbody>
+            </table>
+
+
+
+
+
+
+
+
+
+
+
+
+            
