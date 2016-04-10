@@ -40,19 +40,25 @@
     <div class="row">
         <br/>
     </div>
-    <div class="col-sm-3">
-        <div class="form-group">
-            <label>Name of new variable</label>
-            <input type="text" ng-model="varName" placeholder="heightTank" class="form-control">
-        </div>
+    <div class="col-sm-2 form-group">
+        <label>Variable name</label>
+        <input type="text" ng-model="varName" placeholder="heightTank" class="form-control">
     </div>
-    <div class="col-sm-5">
-        <div class="form-group">
-            <label>Description for variable</label>
-            <input type="text" ng-model="varDesc" placeholder="Height of tank" class="form-control">
-        </div>
+    <div class="col-sm-5 form-group">
+        <label>Description for variable</label>
+        <input type="text" ng-model="varDesc" placeholder="Height of tank" class="form-control"> 
     </div>
-    <div class="col-sm-4" style="height: 71.71px;">
+    <div class="col-lg-2 m-b-xs">
+        <label>Device</label>
+        <select class="input-sm form-control input-s-sm inline">
+                <option value="0">All Devices</option>
+                <option value="1">Device 1</option>
+                <option value="2">Device 2</option>
+                <option value="3">Device 3</option>
+                <option value="4">Device 4</option>
+        </select>
+    </div>
+    <div class="col-sm-3" style="height: 71.71px;">
         <button class="avtive btn-primary" style="margin-top: 26px; margin-left: 20px;">Add Variable</button>
     </div>
     <div class="row">
@@ -153,7 +159,5 @@
         <md-button class="custom_buttons" ng-click="addToExpression(']')"> ] </md-button>
     </div>  
 </div>
-
-
 
 
