@@ -1,8 +1,31 @@
 'use strict';
+
 module.exports = function (grunt) {
 
     // Load grunt tasks automatically
     require('load-grunt-tasks')(grunt);
+
+/*
+    var Book = require("./models/Book.model");
+    var data = require('./books.json');
+    var mongoose = require('mongoose');
+    var testdb = 'mongodb://localhost:27017/testdb';
+    mongoose.connect(testdb, function(err, db) {
+      if (err) {
+        done(false);
+      }
+      console.log("Connected to Mongo DB Database");
+    });
+
+for(var i=0; i<3; i++){
+Book.create(data[i], function(err, book) {
+if(err) {
+  console.log('error saving book');
+} else {
+  console.log(book);
+}
+});}             
+ */   
 
     // Show grunt task time
     require('time-grunt')(grunt);
@@ -217,3 +240,4 @@ module.exports = function (grunt) {
     ]);
 
 };
+
