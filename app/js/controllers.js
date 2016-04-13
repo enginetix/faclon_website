@@ -1539,6 +1539,7 @@ function modalDemoCtrl($scope, $uibModal) {
 function ModalInstanceCtrl ($scope, $uibModalInstance, var_modal) {
 
     $scope.custVar = var_modal;
+    console.log($scope.custVar);
 
     console.log($scope.test);
 
